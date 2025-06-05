@@ -1,11 +1,10 @@
-import React from "react";
+import { FaArrowRight } from "react-icons/fa";
+import ByteBitesImg from "../../../../assets/images/featured/ByteBites.png";
+import CrowdFundrImg from "../../../../assets/images/featured/CrowdFundr.png";
 import EcoChargeImg from "../../../../assets/images/featured/EcoCharge.png";
 import MindMeldImg from "../../../../assets/images/featured/MindMeld.png";
-import StudySyncImg from "../../../../assets/images/featured/StudySync.png";
-import ByteBitesImg from "../../../../assets/images/featured/ByteBites.png";
 import SkillHatchImg from "../../../../assets/images/featured/SkillHatch.png";
-import CrowdFundrImg from "../../../../assets/images/featured/CrowdFundr.png";
-import { FaArrowRight } from "react-icons/fa";
+import StudySyncImg from "../../../../assets/images/featured/StudySync.png";
 
 
 const Featured = () => {

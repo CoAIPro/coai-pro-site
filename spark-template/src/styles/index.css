@@ -8,8 +8,8 @@
 @font-face {
   font-family: 'Aeonik Pro TRIAL';
   src: url('../assets/fonts/aeonikprotrial-regular.otf') format('truetype'),
-       url('../assets/fonts/aeonikprotrial-light.otf') format('truetype'),
-       url('../assets/fonts/aeonikprotrial-bold.otf') format('truetype');
+    url('../assets/fonts/aeonikprotrial-light.otf') format('truetype'),
+    url('../assets/fonts/aeonikprotrial-bold.otf') format('truetype');
   font-weight: 200 400 600 700;
   font-style: normal;
   font-display: swap;
@@ -18,10 +18,10 @@
 @font-face {
   font-family: 'Clash Display Variable';
   src: url('../assets/fonts/ClashDisplay-Variable.ttf') format('truetype'),
-       url('../assets/fonts/ClashDisplay-Light.otf') format('truetype'),
-       url('../assets/fonts/ClashDisplay-Medium.otf') format('truetype'),
-       url('../assets/fonts/ClashDisplay-Regular.otf') format('truetype'),
-       url('../assets/fonts/ClashDisplay-Semibold.otf') format('truetype');
+    url('../assets/fonts/ClashDisplay-Light.otf') format('truetype'),
+    url('../assets/fonts/ClashDisplay-Medium.otf') format('truetype'),
+    url('../assets/fonts/ClashDisplay-Regular.otf') format('truetype'),
+    url('../assets/fonts/ClashDisplay-Semibold.otf') format('truetype');
   font-weight: 200 400 600 700;
   font-style: normal;
   font-display: swap;
