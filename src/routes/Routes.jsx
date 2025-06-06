@@ -1,11 +1,18 @@
 import { createBrowserRouter, Navigate } from "react-router-dom";
+import AuthLayout from "../layout/AuthLayout";
+import DashboardLayout from "../layout/DashboardLayout";
 import MinimalLayout from "../layout/MinimalLayout";
 import Root from "../layout/Root";
 import CreateNewSite from "../pages/create-new-site";
+import Dashboard from "../pages/dashboard";
 import Error from "../pages/error";
+import ForgotPassword from "../pages/forgot-password";
 import Home from "../pages/home";
+import Login from "../pages/login";
 import MyTemplates from "../pages/my-templates";
 import RecommendedTemplates from "../pages/recommended-templates";
+import ResetPassword from "../pages/reset-password";
+import Signup from "../pages/signup";
 
 
 const router = createBrowserRouter([
@@ -21,6 +28,39 @@ const router = createBrowserRouter([
         ]
     },
     {
+        path: "/auth",
+        element: <AuthLayout />,
+        children: [
+            {
+                path: "login",
+                element: <Login />,
+            },
+            {
+                path: "signup",
+                element: <Signup />,
+            },
+            {
+                path: "forgot-password",
+                element: <ForgotPassword />,
+            },
+            {
+                path: "reset-password",
+                element: <ResetPassword />,
+            }
+        ]
+    },
+    {
+        path: "/dashboard/",
+        element: <DashboardLayout />,
+        errorElement: <Error />,
+        children: [
+            {
+                path: "",  
+                element: <Dashboard />,
+            }
+        ]
+    },
+    {
         path: "/create-new-site",
         element: <MinimalLayout />,
         errorElement: <Error />,
@@ -30,7 +70,7 @@ const router = createBrowserRouter([
                 element: <CreateNewSite />,
                 children: [
                     {
-                        path: "recommended",
+                        path: "recommended-templates",
                         element: <RecommendedTemplates />,
                     },
                     {
@@ -39,7 +79,7 @@ const router = createBrowserRouter([
                     },
                     {
                         index: true,
-                        element: <Navigate to="recommended" replace />,
+                        element: <Navigate to="recommended-templates" replace />,
                     }
                 ]
             },

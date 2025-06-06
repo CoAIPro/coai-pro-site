@@ -70,7 +70,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-secondary;
+  @apply font-secondary text-titleColor;
 }
 
 .btn-primary {
@@ -93,4 +93,45 @@ h6 {
 
 .section-subtitle {
   @apply text-sm lg:text-lg text-center text-primary;
+}
+
+/* Main Css Here */
+.auth-box {
+  @apply max-w-4xl mx-auto bg-white rounded-lg p-8 shadow-md;
+}
+
+.bg-gradient-primary {
+  @apply bg-gradient-to-r from-[#3997FF] to-[#F882F2];
+}
+
+.btn-gradient {
+  @apply text-white px-5 py-2 flex items-center gap-3 text-sm xl:text-lg rounded-full;
+}
+
+.dashSidebar {
+  min-height: calc(100vh - 60px);
+}
+
+.dashSidebar a {
+  @apply flex flex-col justify-center items-center text-lg;
+}
+
+.dashSidebar a span {
+  @apply text-lg h-11 w-11 flex items-center justify-center rounded-full bg-gray-100/10 transition-all duration-300;
+}
+
+.dashSidebar a small {
+  @apply text-[13px];
+}
+
+.dashSidebar a:hover span {
+  @apply bg-primary/10 text-primary;
+}
+
+.dashSidebar a:hover small {
+  @apply text-primary;
+}
+
+select {
+  @apply bg-[#EEF2FF] border-none py-3 px-10 outline-none rounded-xl;
 }
