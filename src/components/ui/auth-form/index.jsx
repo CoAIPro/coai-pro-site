@@ -83,7 +83,7 @@ const AuthForm = ({ type }) => {
   const config = formConfig[type];
 
   return (
-    <div className="container mx-auto pt-20">
+    <div className="container mx-auto pt-20 pb-20">
       <div className="auth-box">
         <AuthHead
           title={config.title}
@@ -104,7 +104,7 @@ const AuthForm = ({ type }) => {
               autoComplete="email"
               placeholder="Enter your email"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md placeholder:font-light shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md placeholder:font-light shadow-input focus:outline-none focus:ring-primary focus:border-primary"
               value={formData.email}
               onChange={handleChange}
             />
@@ -122,7 +122,7 @@ const AuthForm = ({ type }) => {
               autoComplete={type === 'signup' ? 'new-password' : 'current-password'}
               placeholder="Enter your password"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md placeholder:font-light shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md placeholder:font-light shadow-input focus:outline-none focus:ring-primary focus:border-primary"
               value={formData.password}
               onChange={handleChange}
             />
@@ -141,7 +141,7 @@ const AuthForm = ({ type }) => {
                 placeholder="Confirm your password"
                 autoComplete="new-password"
                 required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md placeholder:font-light shadow-input focus:outline-none focus:ring-primary focus:border-primary"
                 value={formData.confirmPassword}
                 onChange={handleChange}
               />

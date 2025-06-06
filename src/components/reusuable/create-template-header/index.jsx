@@ -22,8 +22,8 @@ const CreateTemplateHeader = () => {
           <div className="flex items-center gap-2 bg-white rounded-full w-fit">
             <button
               type='button'
-              onClick={() => navigate('/create-new-site/recommended')}
-              className={`btn rounded-full text-xs py-5 px-10 transition-colors duration-200 ${currentPath === 'recommended'
+              onClick={() => navigate('/create-new-site/recommended-templates')}
+              className={`btn rounded-full text-xs py-5 px-10 transition-colors duration-200 ${currentPath === 'recommended-templates'
                 ? 'bg-primary text-white'
                 : 'text-textGray hover:text-primary'
                 }`}

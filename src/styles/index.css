@@ -97,7 +97,7 @@ h6 {
 
 /* Main Css Here */
 .auth-box {
-  @apply max-w-4xl mx-auto bg-white rounded-lg p-8 shadow-md;
+  @apply max-w-4xl mx-auto bg-white rounded-lg p-8 shadow-card;
 }
 
 .bg-gradient-primary {
@@ -134,4 +134,8 @@ h6 {
 
 select {
   @apply bg-[#EEF2FF] border-none py-3 px-10 outline-none rounded-xl;
+}
+
+.dashboard {
+  @apply bg-[#FAFAFA] relative z-10;
 }

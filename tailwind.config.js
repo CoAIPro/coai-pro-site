@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  // shadow- lg: box - shadow: 0px 16px 44px 0px #00000012;
   darkMode: 'class',
   theme: {
     extend: {
@@ -21,6 +22,10 @@ export default {
         dark: "#121212",
         textGray: "#667085",
         titleColor: "#1A1A1A",
+      },
+      boxShadow: {
+        'card': '0px 16px 44px 0px #00000012',
+        'input': '0px 2px 4px 0px #0000000A',
       },
       container: {
         center: true,
