@@ -30,6 +30,7 @@ const router = createBrowserRouter([
     {
         path: "/auth",
         element: <AuthLayout />,
+        errorElement: <Error />,
         children: [
             {
                 path: "login",
@@ -50,12 +51,12 @@ const router = createBrowserRouter([
         ]
     },
     {
-        path: "/dashboard/",
+        path: "/dashboard",
         element: <DashboardLayout />,
         errorElement: <Error />,
         children: [
             {
-                path: "",  
+                index: true,
                 element: <Dashboard />,
             }
         ]
