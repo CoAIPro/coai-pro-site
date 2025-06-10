@@ -1,4 +1,3 @@
-import React from 'react'
 import { FaArrowLeftLong, FaPlus } from 'react-icons/fa6'
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -22,8 +21,8 @@ const CreateTemplateHeader = () => {
           <div className="flex items-center gap-2 bg-white rounded-full w-fit">
             <button
               type='button'
-              onClick={() => navigate('/create-new-site/recommended-templates')}
-              className={`btn rounded-full text-xs py-5 px-10 transition-colors duration-200 ${currentPath === 'recommended-templates'
+              onClick={() => navigate('/templates/recommended')}
+              className={`btn rounded-full text-xs py-5 px-10 transition-colors duration-200 ${currentPath === 'recommended'
                 ? 'bg-primary text-white'
                 : 'text-textGray hover:text-primary'
                 }`}
@@ -32,7 +31,7 @@ const CreateTemplateHeader = () => {
             </button>
             <button
               type='button'
-              onClick={() => navigate('/create-new-site/my-templates')}
+              onClick={() => navigate('/templates/my-templates')}
               className={`btn text-xs py-5 px-10 rounded-full transition-colors duration-200 ${currentPath === 'my-templates'
                 ? 'bg-primary text-white'
                 : 'text-textGray hover:text-primary'

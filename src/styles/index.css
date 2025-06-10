@@ -61,7 +61,7 @@ body {
 }
 
 .button {
-  @apply w-fit bg-gradient-to-r from-[#3997FF] to-[#F882F2] text-white px-5 py-2 flex items-center gap-3 text-sm xl:text-lg rounded-full;
+  @apply w-fit bg-gradient-to-r from-primary to-[#F882F2] text-white px-5 py-2 flex items-center gap-3 text-sm xl:text-lg rounded-full;
 }
 
 h1,
@@ -101,7 +101,7 @@ h6 {
 }
 
 .bg-gradient-primary {
-  @apply bg-gradient-to-r from-[#3997FF] to-[#F882F2];
+  @apply bg-gradient-to-r from-primary to-[#F882F2];
 }
 
 .btn-gradient {
@@ -109,7 +109,8 @@ h6 {
 }
 
 .dashSidebar {
-  min-height: calc(100vh - 60px);
+  min-height: calc(100vh - 40px);
+  @apply flex items-center justify-between flex-col;
 }
 
 .dashSidebar a {
@@ -137,5 +138,103 @@ select {
 }
 
 .dashboard {
-  @apply bg-[#FAFAFA] relative z-10;
+  @apply bg-[#FAFAFA] relative z-10 min-h-screen;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 213 100% 61%;
+    /* #3997FF */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 213 100% 61%;
+    /* Same as primary */
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 213 100% 61%;
+    /* #3997FF */
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 213 100% 61%;
+    /* Same as primary */
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+}
+
+.btn_toggleSidebar {
+  @apply absolute -left-3 top-4 transform bg-white rounded-full p-1 shadow-lg w-7 h-7 flex items-center justify-center text-xl font-secondary;
+}
+
+.dashboardSidebar {
+  @apply bg-white rounded-2xl p-7 shadow-[0px_16px_44px_0px_#00000012] absolute top-24 right-0 w-[100px] h-[calc(100vh-135px)];
+}
+
+.dashboardSidebar.active {
+  @apply w-[301px];
+}
+
+.btn_add_section {
+  @apply bg-white w-full px-4 py-6 flex items-center justify-center gap-2 bg-no-repeat bg-center bg-cover hover:text-primary transition-all duration-300;
+  background-image: url('../assets/images/doted.png');
+  background-size: 100% 100%;
+}
+
+.btn_add_section:active {
+  @apply scale-95;
+}
+
+.device-showcase-title {
+  @apply flex items-center gap-2 font-normal text-base;
 }

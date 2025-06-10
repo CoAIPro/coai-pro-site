@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
+import Templates from '@/components/ui/templates';
+import { myTemplateCategories, myTemplates } from '@/data/templateCard';
 import { motion } from 'framer-motion';
-import React from 'react';
-import CreateTemplateHeader from '../../components/reusuable/create-template-header';
+import { useState } from 'react';
+import CreateTemplateHeader from '../../components/reusuable/template-header';
 
 const MyTemplates = () => {
   const containerVariants = {
@@ -25,6 +27,10 @@ const MyTemplates = () => {
       }
     }
   };
+
+  const [activeItem, setActiveItem] = useState("All");
+
+
   return (
     <>
       {/* Header */}
@@ -40,11 +46,11 @@ const MyTemplates = () => {
         >
           <motion.h2 variants={itemVariants} className="template-section-title">My Templates</motion.h2>
           <motion.p variants={itemVariants} className="emplate-section-paragraph pt-2">
-            Starting point templates linked to your account, including those you’ve created and those that have been shared with you
+            Starting point templates linked to your account, including those you've created and those that have been shared with you
           </motion.p>
         </motion.section>
-        
       </div>
+      <Templates templateItemsMenu={myTemplateCategories} cards={myTemplates} />
     </>
   )
 }

@@ -58,32 +58,30 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <Dashboard />,
+            },
+            {
+                path: "create-site",
+                element: <CreateNewSite />,
             }
         ]
     },
     {
-        path: "/create-new-site",
+        path: "/templates",
         element: <MinimalLayout />,
         errorElement: <Error />,
         children: [
             {
-                path: "",
-                element: <CreateNewSite />,
-                children: [
-                    {
-                        path: "recommended-templates",
-                        element: <RecommendedTemplates />,
-                    },
-                    {
-                        path: "my-templates",
-                        element: <MyTemplates />,
-                    },
-                    {
-                        index: true,
-                        element: <Navigate to="recommended-templates" replace />,
-                    }
-                ]
+                path: "recommended",
+                element: <RecommendedTemplates />,
             },
+            {
+                path: "my-templates",
+                element: <MyTemplates />,
+            },
+            {
+                index: true,
+                element: <Navigate to="recommended" replace />,
+            }
         ]
     },
 ]);

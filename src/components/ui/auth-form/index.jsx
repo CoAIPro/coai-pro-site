@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthHead from '../auth-head';
 
@@ -174,12 +175,14 @@ const AuthForm = ({ type }) => {
           </div>
 
           <div className="pt-6">
-            <button
+            <Button
               type="submit"
-              className="bg-gradient-primary btn-gradient w-full flex justify-center"
+              variant="gradient"
+              size="gradient"
+              className="w-full"
             >
               {config.buttonText}
-            </button>
+            </Button>
           </div>
           <div className='text-left text-sm text-gray-500 -mt-4'>
             By clicking Sign In or Continue with, Do you agree?

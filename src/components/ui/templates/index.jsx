@@ -1,22 +1,10 @@
-import React, { useState } from "react";
+
+import { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
-import { cards } from "../../../data/templateCard";
 
-
-const Templates = () => {
+const Templates = ({ templateItemsMenu, cards }) => {
 
     const [activeItem, setActiveItem] = useState("All");
-
-    const items = [
-        { id: 1, label: "All" },
-        { id: 2, label: "Startup" },
-        { id: 3, label: "Personal" },
-        { id: 4, label: "Landing" },
-        { id: 5, label: "Portfolio" },
-        { id: 5, label: "Sectioned" },
-    ];
-
-
 
     return (
         <section className="py-10 lg:py-24">
@@ -25,7 +13,7 @@ const Templates = () => {
                 {/* btns */}
                 <div className="bg-white dark:bg-black w-fit mx-auto p-2 rounded-full flex items-center gap-3">
                     {
-                        items?.map(item =>
+                        templateItemsMenu?.map(item =>
                             <button key={item?.id} onClick={() => setActiveItem(item?.label)} className={`${activeItem == item?.label ? "bg-dark text-white" : "bg-transparent"} text-[10px] md:text-sm lg:text-base px-2 py-1 md:px-6 md:py-2 rounded-full duration-300`}>
                                 {item?.label}
                             </button>
