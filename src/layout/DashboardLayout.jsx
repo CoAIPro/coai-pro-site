@@ -1,16 +1,18 @@
+import SideBar from '@/components/ui/sidebar'
 import { Outlet } from 'react-router-dom'
 import topShadow from '../assets/images/dashboard/top-shadow.svg'
-import SideBar from '../components/reusuable/sidebar'
 const DashboardLayout = () => {
   return (
     <>
       <div className='dashboard flex gap-5 bg-[#FAFAFA] py-5 px-7 overflow-x-hidden'>
         {/* Top Shape */}
-        <div className='absolute -top-20 -right-10 -z-10 '>
+        <div className='absolute -top-20 -right-10 -z-10'>
           <img src={topShadow} alt="shadow" />
         </div>
-        <SideBar />
-        <main className='flex-1'>
+        <div className='w-[105px] absolute top-5 left-5'>
+          <SideBar />
+        </div>
+        <main className='flex-1 pl-28'>
           <Outlet />
         </main>
       </div>

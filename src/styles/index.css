@@ -57,7 +57,7 @@
 }
 
 body {
-  @apply bg-light dark:bg-dark text-textGray dark:text-light font-primary;
+  @apply bg-light dark:bg-dark text-textGray dark:text-light font-primary overflow-x-hidden;
 }
 
 .button {
@@ -109,8 +109,7 @@ h6 {
 }
 
 .dashSidebar {
-  min-height: calc(100vh - 40px);
-  @apply flex items-center justify-between flex-col;
+  @apply flex items-center justify-between flex-col min-h-[calc(100vh-40px)] h-full w-full py-5 px-4 shadow-[0px_16px_44px_0px_#00000012] bg-white rounded-2xl;
 }
 
 .dashSidebar a {
@@ -202,23 +201,13 @@ select {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-
-  body {
-    @apply bg-background text-foreground;
-  }
-
-}
 
 .btn_toggleSidebar {
   @apply absolute -left-3 top-4 transform bg-white rounded-full p-1 shadow-lg w-7 h-7 flex items-center justify-center text-xl font-secondary;
 }
 
 .dashboardSidebar {
-  @apply bg-white rounded-2xl p-7 shadow-[0px_16px_44px_0px_#00000012] absolute top-24 right-0 w-[100px] h-[calc(100vh-135px)];
+  @apply bg-white rounded-2xl py-7 px-3 shadow-[0px_16px_44px_0px_#00000012] absolute top-24 right-0 w-[100px] min-h-[calc(100vh-135px)];
 }
 
 .dashboardSidebar.active {

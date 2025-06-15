@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const PasswordGate = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [input, setInput] = useState("");
 
   useEffect(() => {

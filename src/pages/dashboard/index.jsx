@@ -1,17 +1,16 @@
-import { Button } from '@/components/ui/button'
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue
-} from "@/components/ui/select"
-import { useNavigate } from 'react-router-dom'
-import noSiteThumb from '../../assets/images/dashboard/object.svg'
-import dashShape from '../../assets/images/shpaes/dash-bg-shape.svg'
+import { Button } from "@/components/ui/button"
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+import { useNavigate } from "react-router-dom"
+import { default as dashShape, default as noSiteThumb } from "../../assets/images/dashboard/object.svg"
 
 const Dashboard = () => {
+  // const navigate = useNavigate()
+  // const gridData = useBuilderStore((s) => s.gridData);
+
+  // const handleExport = () => {
+  //   const jsonOutput = JSON.stringify(gridData, null, 2);
+  //   console.log("Generated JSON:", jsonOutput);
+  // };
   const navigate = useNavigate()
   return (
     <div className='space-y-5'>
@@ -42,6 +41,14 @@ const Dashboard = () => {
       <div className='flex justify-center items-center min-h-[400px]'>
         <img src={noSiteThumb} alt="thumb" />
       </div>
+      {/* <div className="p-6 max-w-4xl mx-auto">
+        <h1 className="text-2xl font-bold mb-4">🧱 Coai Pro Page Builder</h1>
+        <LayoutSelector />
+        <GridCanvas />
+        <button onClick={handleExport} className="mt-6 bg-black text-white px-4 py-2 rounded">
+          Export JSON
+        </button>
+      </div> */}
     </div>
   )
 }

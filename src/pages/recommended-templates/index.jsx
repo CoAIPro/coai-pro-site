@@ -1,8 +1,9 @@
 /* eslint-disable no-unused-vars */
+import CreateTemplateHeader from '@/components/ui/template-header';
 import { categories, recommendedTemplates } from '@/data/templateCard';
 import { motion } from 'framer-motion';
-import CreateTemplateHeader from '../../components/reusuable/template-header';
-import Templates from '../../components/ui/templates';
+import Templates from '../Templates';
+
 
 const RecommendedTemplates = () => {
   const containerVariants = {
