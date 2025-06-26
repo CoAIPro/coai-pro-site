@@ -1,6 +1,5 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
-import React from "react";
 import { FaArrowRight } from "react-icons/fa";
 import arrow from "../../../../assets/images/hero-arrow.png";
 import line from "../../../../assets/images/lines.png";
@@ -65,7 +64,7 @@ const Hero = () => {
                 variants={itemVariants}
                 className="w-fit mx-auto relative pt-5 lg:pt-10"
             >
-                <button className="button mx-auto !px-6 !py-4">
+                <button className="button flex items-center gap-2 rounded-full mx-auto !px-10 !py-4">
                     Start Free
                     <FaArrowRight />
                 </button>

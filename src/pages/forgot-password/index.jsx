@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
-import AuthHead from '../../components/ui/auth-head';
+import { useState } from 'react';
+import AuthHead from '../../components/reuse/auth-head';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState('');

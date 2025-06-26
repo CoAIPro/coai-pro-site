@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import CreateTemplateHeader from '@/components/ui/template-header';
+import CreateTemplateHeader from '@/components/reuse/template-header';
 import { categories, recommendedTemplates } from '@/data/templateCard';
 import { motion } from 'framer-motion';
 import Templates from '../Templates';
@@ -28,10 +28,7 @@ const RecommendedTemplates = () => {
   };
   return (
     <>
-      {/* Header */}
       <CreateTemplateHeader />
-
-      {/* Content Area */}
       <div className="container mx-auto mt-8">
         <motion.section
           variants={containerVariants}

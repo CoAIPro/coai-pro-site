@@ -1,3 +1,4 @@
+import PricingPage from "@/pages/pricing-page";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import AuthLayout from "../layout/AuthLayout";
 import DashboardLayout from "../layout/DashboardLayout";
@@ -84,6 +85,17 @@ const router = createBrowserRouter([
             }
         ]
     },
+    {
+        path: '/pricing',
+        element: <MinimalLayout />,
+        errorElement: <Error />,
+        children: [
+            {
+                index: true,
+                element: <PricingPage />,
+            }
+        ]
+    }
 ]);
 
 export default router;

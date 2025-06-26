@@ -1,47 +1,54 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
-import { Switch } from "@/components/ui/switch";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import {
-  AlignCenter,
-  AlignJustify,
-  AlignLeft,
-  AlignRight,
-  Info,
-  PlusCircle
-} from "lucide-react";
+import CheckboxToggle from "@/components/ui/CheckboxToggle";
+import DropdownMenu from "@/components/ui/DropdownMenu";
+import TabDropdownMenu from "@/components/ui/TabDropdownMenu";
+import Typography from "@/components/ui/Typography";
 import { useState } from "react";
 import { BiPaint } from "react-icons/bi";
 import { CiMobile3 } from "react-icons/ci";
-import { IoIosInformationCircleOutline } from "react-icons/io";
+import { FiPlusCircle } from "react-icons/fi";
+import { HiOutlinePaintBrush } from "react-icons/hi2";
+import { IoInformationCircleOutline } from "react-icons/io5";
 import { MdOutlineAnimation, MdOutlineImage } from "react-icons/md";
 import { PiResizeThin } from "react-icons/pi";
-import LayoutSelector from "../layout-selector";
+import { RiListSettingsLine } from "react-icons/ri";
 
 const BuilderSection = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const [scaleUniformly, setScaleUniformly] = useState(false);
-  const [fixedHeight, setFixedHeight] = useState(false);
-
+  const [toggle1, setToggle1] = useState(false)
+  const [activeTab, setActiveTab] = useState("pencil");
+  const menuItems = [
+    { label: 'Fixed Height' },
+    { label: 'Fit to screen' },
+  ]
+  const colors = [
+    "#F87171",
+    "#FBBF24",
+    "#34D399",
+    "#60A5FA",
+    "#A78BFA",
+    "#F472B6",
+    "#FCD34D",
+    "#4ADE80",
+    "#38BDF8",
+    "#C084FC",
+    "#FB7185",
+    "linear-gradient(45deg, #F87171, #60A5FA)"
+  ];
+  const layoutOptions = [
+    { id: 1, name: "Grid 1", icon: "/layouts/grid1.png" },
+    { id: 2, name: "Grid 2", icon: "/layouts/grid2.png" },
+    { id: 3, name: "Grid 3", icon: "/layouts/grid3.png" },
+    { id: 4, name: "Flex Row", icon: "/layouts/flex-row.png" },
+    { id: 5, name: "Flex Column", icon: "/layouts/flex-column.png" },
+    { id: 6, name: "Sidebar Left", icon: "/layouts/sidebar-left.png" },
+    { id: 7, name: "Sidebar Right", icon: "/layouts/sidebar-right.png" },
+    { id: 8, name: "Split", icon: "/layouts/split.png" },
+  ]
   return (
     <div
       className={`dashboardSidebar transition-all duration-300 ${isOpen ? "active" : ""
         }`}
     >
-      {/* Toggle button */}
       <button onClick={() => setIsOpen(!isOpen)} className="btn_toggleSidebar">
         <svg
           className={`transition-transform text-xl ${isOpen ? "" : "rotate-180"
@@ -58,407 +65,166 @@ const BuilderSection = () => {
           />
         </svg>
       </button>
-      <div className={`pb-8 ${isOpen ? "" : "hidden"
-        }`}>
-        <h2 className="text-xl font-medium pb-6 pt-3 pl-3">Section</h2>
-        {/* Section widget tabs */}
-        <Tabs defaultValue="editsize">
-          <TabsList className="grid w-full grid-cols-2 bg-transparent">
-            <TabsTrigger
-              value="editsize"
-              className="flex items-center justify-center text-[#374957] border-b-[1.5px] rounded-none data-[state=active]:text-primary data-[state=active]:border-[#3997FF] bg-transparent"
-            >
-              <BiPaint className="text-2xl" />
-            </TabsTrigger>
-            <TabsTrigger
-              value="setup"
-              className="flex items-center justify-center text-[#374957] border-b-[1.5px] rounded-none data-[state=active]:text-primary data-[state=active]:border-[#3997FF] bg-transparent"
-            >
-              <MdOutlineAnimation className="text-2xl" />
-            </TabsTrigger>
-          </TabsList>
-          <TabsContent value="editsize" className="pt-4">
-            <Accordion type="multiple" collapsible="true" className="space-y-4">
-              {/* Size Section */}
-              <AccordionItem value="size" className="border rounded-lg">
-                <AccordionTrigger className="px-4">Size</AccordionTrigger>
-                <AccordionContent className="px-4 pb-4">
-                  <div className="space-y-4">
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="space-y-2">
-                        <Label>Width</Label>
-                        <Input type="text" placeholder="Width" />
-                      </div>
-                      <div className="space-y-2">
-                        <Label>Height</Label>
-                        <Input type="text" placeholder="Height" />
-                      </div>
-                    </div>
-                    <div className="space-y-4">
-                      <Accordion type="single" collapsible="true">
-                        <AccordionItem value="responsive" className="border border-[#E0E0E0] rounded-lg">
-                          <AccordionTrigger 
-                            className="py-2 px-4 cursor-pointer data-[state=open]:bg-[#EEF2FF] group [&[data-state=open]>svg]:text-primary"
-                          >
-                            <Label className="text-xs font-normal group-data-[state=open]:text-primary">
-                              Scale uniformly
-                            </Label>
-                          </AccordionTrigger>
-                          <AccordionContent className="px-4 py-4">
-                            <div className="space-y-3">
-                              <div className="flex items-center justify-between">
-                                <Label>Fixed Height</Label>
-                                <Switch
-                                  checked={scaleUniformly}
-                                  onCheckedChange={setScaleUniformly}
-                                />
-                              </div>
-                              <div className="flex items-center justify-between">
-                                <div className="flex items-center gap-2">
-                                  <Label className="text-sm text-gray-500">
-                                    Fit to screen
-                                  </Label>
-                                </div>
-                                <Switch
-                                  checked={fixedHeight}
-                                  onCheckedChange={setFixedHeight}
-                                />
-                              </div>
-                            </div>
-                          </AccordionContent>
-                        </AccordionItem>
-                      </Accordion>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
 
-              {/* Design Section */}
-              <AccordionItem value="design" className="border rounded-lg">
-                <AccordionTrigger className="px-4">Design</AccordionTrigger>
-                <AccordionContent className="px-4 pb-4">
-                  <div className="flex items-center justify-between gap-2 pb-2">
-                    <label htmlFor="background">Background</label>
-                    <span>
-                      <IoIosInformationCircleOutline className="text-gray-400 cursor-pointer" />
-                    </span>
-                  </div>
-                  <div className="flex flex-col justify-between gap-2">
-                    <label htmlFor="background-color">Color</label>
-                    <div className="grid grid-cols-6 gap-2">
-                      {/* First row: 6 solid colors */}
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-white hover:ring-2 ring-primary transition"
-                        style={{ background: "#FFFFFF" }}
-                        aria-label="White"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#F87171] hover:ring-2 ring-primary transition"
-                        style={{ background: "#F87171" }}
-                        aria-label="Red"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#FBBF24] hover:ring-2 ring-primary transition"
-                        style={{ background: "#FBBF24" }}
-                        aria-label="Yellow"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#34D399] hover:ring-2 ring-primary transition"
-                        style={{ background: "#34D399" }}
-                        aria-label="Green"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#60A5FA] hover:ring-2 ring-primary transition"
-                        style={{ background: "#60A5FA" }}
-                        aria-label="Blue"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#A78BFA] hover:ring-2 ring-primary transition"
-                        style={{ background: "#A78BFA" }}
-                        aria-label="Purple"
-                      />
-                      {/* Second row: 5 solid colors + 1 gradient */}
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#F472B6] hover:ring-2 ring-primary transition"
-                        style={{ background: "#F472B6" }}
-                        aria-label="Pink"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#FCD34D] hover:ring-2 ring-primary transition"
-                        style={{ background: "#FCD34D" }}
-                        aria-label="Gold"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#4B5563] hover:ring-2 ring-primary transition"
-                        style={{ background: "#4B5563" }}
-                        aria-label="Gray"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#10B981] hover:ring-2 ring-primary transition"
-                        style={{ background: "#10B981" }}
-                        aria-label="Emerald"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-[#F59E42] hover:ring-2 ring-primary transition"
-                        style={{ background: "#F59E42" }}
-                        aria-label="Orange"
-                      />
-                      <button
-                        className="w-7 h-7 rounded-md border border-gray-200 bg-gradient-to-r from-[#F87171] via-[#FBBF24] to-[#34D399] hover:ring-2 ring-primary transition"
-                        style={{ background: "linear-gradient(to right, #F87171, #FBBF24, #34D399)" }}
-                        aria-label="Gradient"
-                      />
+      <div className={`px-4 pb-8 ${isOpen ? "" : "hidden"
+        }`}>
+        <h2 className="text-xl font-medium pb-6 pt-3">Section</h2>
+        <div className="flex border-b border-gray-300">
+          <button
+            className={`px-4 py-2 text-sm font-medium flex justify-center items-center gap-1 w-full ${activeTab === "pencil" ? "border-b-2 border-primary text-primary" : "text-dark"
+              }`}
+            onClick={() => setActiveTab("pencil")}
+          >
+            <HiOutlinePaintBrush className="text-2xl" />
+          </button>
+          <button
+            className={`px-4 py-2 text-sm font-medium flex justify-center items-center gap-1 w-full ${activeTab === "animation" ? "border-b-2 border-primary text-primary" : "text-dark"
+              }`}
+            onClick={() => setActiveTab("animation")}
+          >
+            <RiListSettingsLine className="text-2xl" />
+          </button>
+        </div>
+        <div className="mt-5">
+          {activeTab === "pencil" && (
+            <div className="rounded-lg">
+              <TabDropdownMenu label="Size" children={
+                <div className="w-full">
+                  <div className="flex justify-between items-center gap-5 w-full mt-3">
+                    <div className="flex items-center gap-2 max-w-[98px]">
+                      <label htmlFor="width">W</label>
+                      <input type="number" className="input-sm w-full" id="width" placeholder="1263px" />
+                    </div>
+                    <div className="flex items-center justify-end gap-2 max-w-[98px]">
+                      <label htmlFor="height">H</label>
+                      <input type="number" className="input-sm w-full" id="height" placeholder="1263px" />
                     </div>
                   </div>
-                  {/* Opacity */}
-                  <div className="flex items-center justify-between gap-2 py-5">
-                    <label htmlFor="opacity">Opacity</label>
-                    <input type="number" min="1" max="100" step="1" placeholder="100%" className="border border-gray-200 rounded-md p-1 text-center py-1 px-1" />
+                  <div className="flex items-center justify-between gap-2 w-full text-2xl text-dark mt-5">
+                    <p className="text-base">Resposnive Behavior</p>
+                    <button type="button" className="rounded-full p-1 ">
+                      <IoInformationCircleOutline className="text-2xl" />
+                    </button>
                   </div>
-                  <hr />
-                  <div className="flex flex-col justify-between gap-2 pt-5">
-                    <label htmlFor="media">Media</label>
-                    <div className="flex items-center justify-center min-h-[200px] bg-primary/10 rounded-md pt-2 relative hover:text-primary">
-                      <input type="file" className="absolute top-0 left-0 w-full h-full cursor-pointer opacity-0" />
-                      <label htmlFor="media" className="cursor-pointer flex flex-col items-center justify-center gap-2">
-                        <PlusCircle className="cursor-pointer" />
-                        <span className="flex items-center gap-2">Add Video or image</span>
+                  <div className="w-full mt-3">
+                    <DropdownMenu label="Responsive Behavior" items={menuItems} />
+                  </div>
+                </div>
+              }>
+              </TabDropdownMenu>
+
+              <TabDropdownMenu label="Design" children={
+                <div className="w-full">
+                  <div className="flex items-center justify-between gap-2 w-full text-2xl text-dark ">
+                    <p className="text-base">Background</p>
+                    <button type="button" className="rounded-full p-1 ">
+                      <IoInformationCircleOutline className="text-2xl" />
+                    </button>
+                  </div>
+                  <div className="w-full mt-3">
+                    <p className="text-base pb-3 text-dark">Color</p>
+                    <div className="flex flex-wrap gap-2">
+                      {colors.map((color, index) => (
+                        <div
+                          key={index}
+                          className="w-[28px] h-[28px] rounded-[5px] cursor-pointer border border-gray-300"
+                          style={{
+                            background: color
+                          }}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                  <div className="flex items-center w-full mt-5 justify-between gap-2">
+                    <label htmlFor="height">Opacity</label>
+                    <div className="max-w-16">
+                      <input type="number" className="input-sm w-full" id="height" placeholder="100%" />
+                    </div>
+                  </div>
+                  <div className="w-full mt-5">
+                    <p className="text-base pb-3 text-dark">Media</p>
+                    <div className="flex flex-wrap w-full gap-2 relative">
+                      <input
+                        type="file"
+                        id="media"
+                        className="hidden"
+                      />
+                      <label
+                        htmlFor="media"
+                        className="w-full px-4 py-8 rounded-lg cursor-pointer bg-[#EEF2FF] flex flex-col items-center justify-center text-primary gap-2"
+                      >
+                        <FiPlusCircle className="w-5 h-5" />
+                        <span className="text-sm font-medium">Add Video or Image</span>
                       </label>
                     </div>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                </div>
+              }>
+              </TabDropdownMenu>
 
-              {/* Typography Section */}
-              <AccordionItem value="typography" className="border rounded-lg">
-                <AccordionTrigger className="px-4">Typography</AccordionTrigger>
-                <AccordionContent className="px-4 pb-4">
-                  <div className="space-y-6">
-                    {/* Font Family */}
-                    <div className="space-y-2">
-                      <Label>Font Family</Label>
-                      <Select defaultValue="inter">
-                        <SelectTrigger className="w-full">
-                          <SelectValue placeholder="Select font" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="inter">Inter</SelectItem>
-                          <SelectItem value="roboto">Roboto</SelectItem>
-                          <SelectItem value="open-sans">Open Sans</SelectItem>
-                          <SelectItem value="poppins">Poppins</SelectItem>
-                          <SelectItem value="montserrat">Montserrat</SelectItem>
-                          <SelectItem value="lato">Lato</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
+              <TabDropdownMenu label="Typography" children={
+                <div className="w-full">
+                  <Typography />
+                </div>
+              }></TabDropdownMenu>
 
-                    {/* Font Weight & Size */}
-                    <div className="grid grid-cols-2 gap-4">
-                      <Select defaultValue="400">
-                        <SelectTrigger>
-                          <SelectValue placeholder="Weight" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="100">Thin</SelectItem>
-                          <SelectItem value="200">Extra Light</SelectItem>
-                          <SelectItem value="300">Light</SelectItem>
-                          <SelectItem value="400">Regular</SelectItem>
-                          <SelectItem value="500">Medium</SelectItem>
-                          <SelectItem value="600">Semi Bold</SelectItem>
-                          <SelectItem value="700">Bold</SelectItem>
-                          <SelectItem value="800">Extra Bold</SelectItem>
-                          <SelectItem value="900">Black</SelectItem>
-                        </SelectContent>
-                      </Select>
-
-                      <Select defaultValue="16">
-                        <SelectTrigger>
-                          <SelectValue placeholder="Size" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          <SelectItem value="12">12px</SelectItem>
-                          <SelectItem value="14">14px</SelectItem>
-                          <SelectItem value="16">16px</SelectItem>
-                          <SelectItem value="18">18px</SelectItem>
-                          <SelectItem value="20">20px</SelectItem>
-                          <SelectItem value="24">24px</SelectItem>
-                          <SelectItem value="30">30px</SelectItem>
-                          <SelectItem value="36">36px</SelectItem>
-                          <SelectItem value="48">48px</SelectItem>
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    {/* Text Alignment */}
-                    <div className="space-y-3">
-                      <Label>Position</Label>
-                      <div className="grid grid-cols-4 gap-2">
-                        <button 
-                          className="p-2 border rounded-lg hover:bg-gray-50 flex items-center justify-center"
-                          title="Align Left"
-                        >
-                          <AlignLeft className="w-4 h-4" />
-                        </button>
-                        <button 
-                          className="p-2 border rounded-lg hover:bg-gray-50 flex items-center justify-center"
-                          title="Align Center"
-                        >
-                          <AlignCenter className="w-4 h-4" />
-                        </button>
-                        <button 
-                          className="p-2 border rounded-lg hover:bg-gray-50 flex items-center justify-center"
-                          title="Align Right"
-                        >
-                          <AlignRight className="w-4 h-4" />
-                        </button>
-                        <button 
-                          className="p-2 border rounded-lg hover:bg-gray-50 flex items-center justify-center"
-                          title="Justify"
-                        >
-                          <AlignJustify className="w-4 h-4" />
-                        </button>
-                      </div>
-                    </div>
+              <TabDropdownMenu
+                label="Layout"
+              >
+                <div className="w-full">
+                  <p className="text-sm mb-2 text-dark">Choose Layout</p>
+                  <div className="grid grid-cols-3 gap-3">
+                    {layoutOptions.map((layout) => (
+                      <button
+                        key={layout.id}
+                        className="p-2 border rounded-lg flex items-center justify-center hover:border-primary transition-all"
+                        title={layout.name}
+                      >
+                        <img src={layout.icon} alt={layout.name} className="w-6 h-6 object-contain" />
+                      </button>
+                    ))}
                   </div>
-                </AccordionContent>
-              </AccordionItem>
+                  <p className="text-sm mt-4 mb-2 text-dark">Advanced CSS Grid</p>
+                  <button className="w-full bg-blue-500 text-white py-2 rounded-lg text-sm font-medium">
+                    Apply
+                  </button>
+                </div>
+              </TabDropdownMenu>
 
-              {/* Layout Section */}
-              <AccordionItem value="layout" className="border rounded-lg">
-                <AccordionTrigger className="px-4">Layout</AccordionTrigger>
-                <AccordionContent className="px-4 pb-4">
-                  <div className="space-y-6">
-                    {/* Padding Controls */}
-                    <div className="space-y-4 pt-5">
-                      <div className="flex items-center justify-between">
-                        <Label>Padding</Label>
-                        <Select defaultValue="px">
-                          <SelectTrigger className="w-20 h-8 rounded-lg">
-                            <SelectValue placeholder="Unit" />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="px">px</SelectItem>
-                            <SelectItem value="rem">rem</SelectItem>
-                            <SelectItem value="em">em</SelectItem>
-                            <SelectItem value="%">%</SelectItem>
-                          </SelectContent>
-                        </Select>
-                      </div>
-                      
-                      {/* Left & Right Padding */}
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label>Left</Label>
-                          <Input type="number" placeholder="0" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label>Right</Label>
-                          <Input type="number" placeholder="0" />
-                        </div>
-                      </div>
+              <TabDropdownMenu label="Anchor" children={
+                <div className="w-full">
+                  <CheckboxToggle
+                    checked={toggle1}
+                    onChange={setToggle1}
+                    label="Enable Feature A"
+                    showLabel={true}
+                    variant="1"
+                  />
+                </div>
+              }></TabDropdownMenu>
 
-                      {/* Top & Bottom Padding */}
-                      <div className="grid grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label>Top</Label>
-                          <Input type="number" placeholder="0" />
-                        </div>
-                        <div className="space-y-2">
-                          <Label>Bottom</Label>
-                          <Input type="number" placeholder="0" />
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Layout Options Grid */}
-                    {/* <div className="space-y-3">
-                      <Label>Layout Options</Label>
-                      <div className="grid grid-cols-4 gap-3">
-                        <button className="p-3 border rounded-lg hover:bg-gray-50 flex items-center justify-center" title="Flex Row">
-                          <Rows className="w-5 h-5" />
-                        </button>
-                        <button className="p-3 border rounded-lg hover:bg-gray-50 flex items-center justify-center" title="Flex Column">
-                          <Columns className="w-5 h-5" />
-                        </button>
-                        <button className="p-3 border rounded-lg hover:bg-gray-50 flex items-center justify-center" title="Grid">
-                          <LayoutGrid className="w-5 h-5" />
-                        </button>
-                        <button className="p-3 border rounded-lg hover:bg-gray-50 flex items-center justify-center" title="List">
-                          <LayoutList className="w-5 h-5" />
-                        </button>
-                        <button className="p-3 border rounded-lg hover:bg-gray-50 flex items-center justify-center" title="Align Left">
-                          <AlignLeft className="w-5 h-5" />
-                        </button>
-                        <button className="p-3 border rounded-lg hover:bg-gray-50 flex items-center justify-center" title="Align Center">
-                          <AlignCenter className="w-5 h-5" />
-                        </button>
-                        <button className="p-3 border rounded-lg hover:bg-gray-50 flex items-center justify-center" title="Align Right">
-                          <AlignRight className="w-5 h-5" />
-                        </button>
-                        <button className="p-3 border rounded-lg hover:bg-gray-50 flex items-center justify-center" title="Justify">
-                          <AlignJustify className="w-5 h-5" />
-                        </button>
-                      </div>
-                    </div> */}
-                    <LayoutSelector />
+              <TabDropdownMenu label="Position" children={
+                <div className="w-full">
+                  <div className="flex items-center justify-between gap-2 w-full text-2xl text-dark ">
+                    <p className="text-base">Position Type</p>
+                    <button type="button" className="rounded-full p-1 ">
+                      <IoInformationCircleOutline className="text-2xl" />
+                    </button>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              {/* Anchor Section */}
-              <AccordionItem value="anchor" className="border rounded-lg">
-                <AccordionTrigger className="px-4">Anchor</AccordionTrigger>
-                <AccordionContent className="px-4 pb-4">
-                  <label className="flex items-center justify-between cursor-pointer group">
-                    <span className="text-sm font-medium group-hover:text-primary transition-colors">Enable Anchor</span>
-                    <div className="relative">
-                      <input
-                        type="checkbox"
-                        className="peer sr-only"
-                      />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-[#25C866]"></div>
-                    </div>
-                  </label>
-                </AccordionContent>
-              </AccordionItem>
-
-              {/* Position Section */}
-              <AccordionItem value="position" className="border rounded-lg">
-                <AccordionTrigger className="px-4">Position</AccordionTrigger>
-                <AccordionContent className="px-4 pb-4">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium">Position Type</span>
-                    <Info className="w-4 h-4 text-muted-foreground cursor-pointer" />
+                  <div className="w-full mt-3">
+                    <DropdownMenu label="Default" items={menuItems} />
                   </div>
-                  <Select>
-                    <SelectTrigger className="w-full">
-                      <SelectValue placeholder="Sticky" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="static">Static</SelectItem>
-                      <SelectItem value="relative">Relative</SelectItem>
-                      <SelectItem value="absolute">Absolute</SelectItem>
-                      <SelectItem value="fixed">Fixed</SelectItem>
-                      <SelectItem value="sticky">Sticky</SelectItem>
-                      <SelectItem value="inherit">Inherit</SelectItem>
-                      <SelectItem value="initial">Initial</SelectItem>
-                      <SelectItem value="unset">Unset</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </AccordionContent>
-              </AccordionItem>
-            </Accordion>
-          </TabsContent>
-          <TabsContent value="setup">
-            <div className="flex items-center justify-between mb-2 mt-10">
-              <span className="text-sm font-medium">Animation and Effect</span>
+                </div>
+              }></TabDropdownMenu>
             </div>
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-sm font-medium">Add Movement in your site</span>
-              <Info className="w-4 h-4 text-muted-foreground cursor-pointer" />
+          )}
+          {activeTab === "animation" && (
+            <div>
+              <h2>Animation</h2>
             </div>
-          </TabsContent>
-        </Tabs>
+          )}
+        </div>
+
       </div>
       <div className={`pb-8 ${isOpen ? "hidden" : "block"
         }`}>
@@ -472,6 +238,7 @@ const BuilderSection = () => {
             <span className="text-sm font-medium">Animation</span>
           </button>
         </div>
+
         {/* Content For Designing */}
         <div className="flex flex-col items-center rounded-lg px-2">
           <button type="button" className="flex flex-col items-center justify-center gap-2 p-5">

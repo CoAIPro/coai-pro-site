@@ -1,19 +1,20 @@
-import React from 'react'
-import Hero from '../../components/page-comp/home/hero'
-import HowItWroks from '../../components/page-comp/home/how-it-works'
-import Info from '../../components/page-comp/home/info'
-import Plans from '../../components/page-comp/home/plans'
-import Templates from '../../components/ui/templates'
-
+import HomeCta from '@/components/page-comp/home/cta';
+import HowItWroks from '@/components/page-comp/home/how-it-works';
+import Templates from '@/components/reuse/templates';
+import Hero from '../../components/page-comp/home/hero';
+import Info from '../../components/page-comp/home/info';
+import Plans from '../../components/page-comp/home/plans';
+import { ThemeProvider } from '../../context/ThemeProvider';
 const Home = () => {
     return (
-        <>
+        <ThemeProvider>
             <Hero />
             <HowItWroks />
             <Templates />
             <Info />
             <Plans />
-        </>
+            <HomeCta />
+        </ThemeProvider>
     )
 }
 

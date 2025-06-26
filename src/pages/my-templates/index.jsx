@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import CreateTemplateHeader from '@/components/ui/template-header';
+import CreateTemplateHeader from '@/components/reuse/template-header';
 import { myTemplateCategories, myTemplates } from '@/data/templateCard';
 import { motion } from 'framer-motion';
 import { useState } from 'react';

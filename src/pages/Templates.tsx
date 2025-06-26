@@ -1,5 +1,3 @@
-import { TemplateGrid } from "../components/TemplateGrid";
-
 export default function Templates() {
   return (
     <div className="container mx-auto py-8 space-y-12">
@@ -11,11 +9,7 @@ export default function Templates() {
         </p>
       </div>
 
-      <TemplateGrid type="recommended" />
-
-      <div className="border-t border-gray-200 pt-8">
-        <TemplateGrid type="my-templates" />
-      </div>
+      <div className="border-t border-gray-200 pt-8"></div>
     </div>
   );
 }

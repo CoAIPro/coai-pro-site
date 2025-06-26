@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import AuthHead from '../../components/ui/auth-head';
+import AuthHead from '../../components/reuse/auth-head';
 
 const ResetPassword = () => {
   const navigate = useNavigate();
