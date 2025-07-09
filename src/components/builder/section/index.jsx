@@ -2,6 +2,7 @@ import CheckboxToggle from "@/components/ui/CheckboxToggle";
 import DropdownMenu from "@/components/ui/DropdownMenu";
 import TabDropdownMenu from "@/components/ui/TabDropdownMenu";
 import Typography from "@/components/ui/Typography";
+import { layoutOptions } from "@/data/icons";
 import { useState } from "react";
 import { BiPaint } from "react-icons/bi";
 import { CiMobile3 } from "react-icons/ci";
@@ -34,16 +35,7 @@ const BuilderSection = () => {
     "#FB7185",
     "linear-gradient(45deg, #F87171, #60A5FA)"
   ];
-  const layoutOptions = [
-    { id: 1, name: "Grid 1", icon: "/layouts/grid1.png" },
-    { id: 2, name: "Grid 2", icon: "/layouts/grid2.png" },
-    { id: 3, name: "Grid 3", icon: "/layouts/grid3.png" },
-    { id: 4, name: "Flex Row", icon: "/layouts/flex-row.png" },
-    { id: 5, name: "Flex Column", icon: "/layouts/flex-column.png" },
-    { id: 6, name: "Sidebar Left", icon: "/layouts/sidebar-left.png" },
-    { id: 7, name: "Sidebar Right", icon: "/layouts/sidebar-right.png" },
-    { id: 8, name: "Split", icon: "/layouts/split.png" },
-  ]
+
   return (
     <div
       className={`dashboardSidebar transition-all duration-300 ${isOpen ? "active" : ""

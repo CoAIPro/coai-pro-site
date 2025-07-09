@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 import { FaChevronDown } from 'react-icons/fa'
 
 export default function TabDropdownMenu({ label = 'Open Menu', children }) {
@@ -6,15 +6,10 @@ export default function TabDropdownMenu({ label = 'Open Menu', children }) {
   const dropdownRef = useRef(null)
   const contentRef = useRef(null)
 
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setIsOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
+  const handleButtonClick = (e) => {
+    e.stopPropagation()
+    setIsOpen(!isOpen)
+  }
 
   return (
     <div
@@ -22,7 +17,7 @@ export default function TabDropdownMenu({ label = 'Open Menu', children }) {
       ref={dropdownRef}
     >
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onMouseDown={handleButtonClick}
         className={`px-4 bg-white rounded-xl w-full transition-colors duration-300 ${isOpen ? 'bg-[#EEF2FF] rounded-b-none' : ''
           }`}
       >
