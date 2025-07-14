@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('../assets/fonts/fonts.css');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -83,6 +83,10 @@ input[type="number"]::-webkit-inner-spin-button {
   margin: 0;
 }
 
+html {
+  @apply overflow-x-hidden
+}
+
 body {
   @apply bg-light dark:bg-dark text-textGray dark:text-light font-primary overflow-x-hidden;
 }
@@ -102,7 +106,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-secondary text-dark dark:text-light;
+  @apply font-secondary text-dark dark:text-light font-medium;
 }
 
 .btn-primary {
@@ -248,6 +252,6 @@ select {
 }
 
 .homeCtaBox {
-  @apply grid grid-cols-2 gap-3 bg-white dark:bg-black rounded-2xl shadow-[0px_26px_27px_0px_#A791D217] relative p-10;
+  @apply bg-white dark:bg-black rounded-2xl shadow-[0px_26px_27px_0px_#A791D217] relative p-10;
   background: linear-gradient(334.82deg, rgba(255, 255, 255, 0) 1.7%, rgba(10, 196, 255, 0.2) 143.21%);
 }

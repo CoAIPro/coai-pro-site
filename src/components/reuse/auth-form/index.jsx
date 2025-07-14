@@ -100,7 +100,7 @@ const AuthForm = ({ type }) => {
               autoComplete="email"
               placeholder="Enter your email"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md placeholder:font-light shadow-input focus:outline-none focus:ring-primary focus:border-primary"
+              className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md placeholder:font-light shadow-input focus:outline-none focus:ring-primary focus:border-primary"
               value={formData.email}
               onChange={handleChange}
             />
@@ -118,7 +118,7 @@ const AuthForm = ({ type }) => {
               autoComplete={type === 'signup' ? 'new-password' : 'current-password'}
               placeholder="Enter your password"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md placeholder:font-light shadow-input focus:outline-none focus:ring-primary focus:border-primary"
+              className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md placeholder:font-light shadow-input focus:outline-none focus:ring-primary focus:border-primary"
               value={formData.password}
               onChange={handleChange}
             />
@@ -137,7 +137,7 @@ const AuthForm = ({ type }) => {
                 placeholder="Confirm your password"
                 autoComplete="new-password"
                 required
-                className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md placeholder:font-light shadow-input focus:outline-none focus:ring-primary focus:border-primary"
+                className="mt-1 block w-full px-3 py-3 border border-gray-300 rounded-md placeholder:font-light shadow-input focus:outline-none focus:ring-primary focus:border-primary"
                 value={formData.confirmPassword}
                 onChange={handleChange}
               />
@@ -151,7 +151,7 @@ const AuthForm = ({ type }) => {
                 id="rememberMe"
                 name="rememberMe"
                 type="checkbox"
-                className="h-4 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                className="h-5 w-4 text-primary focus:ring-primary border-gray-300 rounded"
                 checked={formData.rememberMe}
                 onChange={handleChange}
               />
@@ -168,7 +168,14 @@ const AuthForm = ({ type }) => {
               </div>
             )}
           </div>
-
+          <div className='w-full flex items-center justify-center'>
+            <button
+              type="submit"
+              className="!w-full max-w-full button py-4 rounded-full text-center justify-center"
+            >
+              {config.buttonText}
+            </button>
+          </div>
           <div className="pt-6">
           </div>
           <div className='text-left text-sm text-gray-500 -mt-4'>

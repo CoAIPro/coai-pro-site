@@ -43,7 +43,7 @@ const Pricing = () => {
               <div
                 className={`
                   h-full p-6 rounded-3xl shadow-lg flex flex-col
-                  ${isHighlighted ? "bg-white" : "border border-slate-200 hover:border-primary"}
+                  ${isHighlighted ? "bg-white dark:bg-dark" : "border border-slate-200 dark:border-[#313131] hover:border-primary dark:shadow-priceShadow"}
                 `}
               >
                 <div className="flex items-center gap-1 mb-2">
@@ -58,7 +58,7 @@ const Pricing = () => {
                   <p
                     className={`text-xl ${isHighlighted ? "lg:text-[32px]" : "lg:text-[26px]"} font-bold font-secondary my-2 ${index === 2
                       ? "bg-gradient-to-r from-blue-500 to-purple-500 text-transparent bg-clip-text"
-                      : "text-black"
+                      : "text-black dark:text-white"
                       }`}
                   >
                     {plan.price}
@@ -74,7 +74,7 @@ const Pricing = () => {
                   {plan.note}
                 </p>
                 <button
-                  className={`flex items-center justify-center gap-5 rounded-full py-4 px-6 !w-full mb-5 ${isHighlighted ? "bg-dark text-light" : "button"}`}
+                  className="button flex items-center justify-center gap-5 rounded-full py-4 px-6 !w-full mb-5"
                   onClick={onGetStarted}
                 >
                   Get Started

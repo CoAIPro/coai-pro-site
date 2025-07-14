@@ -1,3 +1,9 @@
+import Delta from "../assets/images/templates/Delta.png";
+import LaunchPad from "../assets/images/templates/LaunchPad.png";
+import Orbit from "../assets/images/templates/Orbit.png";
+import Shift from "../assets/images/templates/Shift.png";
+import Spark from "../assets/images/templates/Spark.png";
+
 export const templateItemsMenu = [
   { id: 1, label: "All" },
   { id: 2, label: "Business" },
@@ -5,42 +11,40 @@ export const templateItemsMenu = [
   { id: 4, label: "E-commerce" },
   { id: 5, label: "Blog" },
 ];
-
 export const cards = [
   {
     id: 1,
-    image: "https://placehold.co/600x400?text=Business+1",
-    title: "Business Template 1",
-    text: "A modern business template for startups and companies.",
+    image: LaunchPad,
+    title: "LaunchPad",
+    text: "Instant startup identity  logo, tagline, subdomain. Launch in 60 seconds",
+    link: "https://www.launchpad.com",
   },
   {
     id: 2,
-    image: "https://placehold.co/600x400?text=Portfolio+1",
-    title: "Portfolio Template 1",
-    text: "Showcase your work with this clean portfolio template.",
+    image: Delta,
+    title: "Delta",
+    text: "Consultant/service business page",
+    link: "https://www.delta.com",
   },
   {
     id: 3,
-    image: "https://placehold.co/600x400?text=E-commerce+1",
-    title: "E-commerce Template 1",
-    text: "A stylish template for your online store.",
+    image: Orbit,
+    title: "Orbit",
+    text: "Personal site: bio, projects, contact",
+    link: "https://www.orbit.com",
   },
   {
     id: 4,
-    image: "https://placehold.co/600x400?text=Blog+1",
-    title: "Blog Template 1",
-    text: "Start your blog with this elegant template.",
+    image: Shift,
+    title: "Shift",
+    text: "Hero + logo-focused layout",
+    link: "https://www.shift.com",
   },
   {
     id: 5,
-    image: "https://placehold.co/600x400?text=Business+2",
-    title: "Business Template 2",
-    text: "Another great option for business websites.",
-  },
-  {
-    id: 6,
-    image: "https://placehold.co/600x400?text=Portfolio+2",
-    title: "Portfolio Template 2",
-    text: "A creative template for portfolios.",
-  },
+    image: Spark,
+    title: "Spark",
+    text: "Business site: services, projects, contact",
+    link: "https://www.spark.com",
+  }
 ]; 

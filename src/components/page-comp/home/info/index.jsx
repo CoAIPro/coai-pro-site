@@ -1,13 +1,10 @@
-import React from "react";
+import { useTheme } from "@/context/ThemeContext";
 import { FaArrowRight } from "react-icons/fa";
 import previewImg from "../../../../assets/images/info-img.png";
 import { features } from "../../../../data/featureCard";
 
-
 const Info = () => {
-
-
-
+    const { darkMode } = useTheme();
     return (
         <section className="container mx-auto py-16 px-4 lg:px-0 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-28">
 
@@ -20,14 +17,13 @@ const Info = () => {
                         <span className="text-primary"> — everywhere.</span>
                     </p>
                 </h2>
-
                 <div className="space-y-4">
                     {features.map((item) => (
-                        <div key={item.id} className={`flex items-center gap-3 p-4 rounded-xl ${item.bg}`}>
-                            <img src={item?.icon} className="w-7 object-contain" alt={item?.title || ""} />
+                        <div key={item.id} className={`flex items-center gap-3 p-4 rounded-xl ${item.bgClass}`}>
+                            <img src={darkMode ? item?.icon?.dark : item?.icon?.light} className="w-7 object-contain" alt={item?.title || ""} />
                             <div>
-                                <h4 className="text-lg font-semibold">{item.title}</h4>
-                                <p className="text-sm text-gray-600">{item.desc}</p>
+                                <h4 className="text-lg font-semibold dark:text-light">{item.title}</h4>
+                                <p className="text-sm text-gray-600 dark:text-light">{item.desc}</p>
                             </div>
                         </div>
                     ))}

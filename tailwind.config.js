@@ -5,7 +5,7 @@ export default {
 		"./index.html",
 		"./src/**/*.{js,ts,jsx,tsx}",
 	],
-	darkMode: ['class', "class"],
+	darkMode: 'class',
 	theme: {
 		extend: {
 			fontFamily: {
@@ -30,12 +30,18 @@ export default {
 					'sans-serif'
 				]
 			},
+			backgroundImage: {
+				'howWorkGradient': 'linear-gradient(334.82deg, rgba(255, 255, 255, 0) 1.7%, rgba(10, 196, 255, 0.2) 143.21%)',
+
+				'darkGradientBg': 'linear-gradient(334.82deg, rgba(42, 44, 56, 0) 1.7%, rgba(16, 112, 143, 0.2) 143.21%)'
+			},
 			colors: {
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
 					light: '#3997FF',
-					dark: '#2170CC'
+					dark: '#2170CC',
+					50: '#EEF2FF',
 				},
 				secondary: {
 					DEFAULT: 'hsl(var(--secondary))',
@@ -43,7 +49,11 @@ export default {
 				},
 				light: '#FAFAFA',
 				dark: '#121212',
+				cardDark: '#2A2C38',
+				lightBorder: '#E2E2E2',
+				darkBorder: '#313131',
 				textGray: '#667085',
+				pragraphText: '#7B7B7B',
 				titleColor: '#1A1A1A',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
@@ -81,7 +91,9 @@ export default {
 			boxShadow: {
 				card: '0px 16px 44px 0px #00000012',
 				input: '0px 2px 4px 0px #0000000A',
-				header: '0px 16px 44px 0px #00000012'
+				header: '0px 16px 44px 0px #00000012',
+				darkBtn: '0px 4px 14.4px 0px #EEE7FE66',
+				priceShadow: '0px 29.54px 30.68px 0px #A791D217'
 			},
 			container: {
 				center: true,

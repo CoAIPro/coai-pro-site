@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import AuthHead from '../../components/reuse/auth-head';
 
 const ForgotPassword = () => {
@@ -22,7 +23,6 @@ const ForgotPassword = () => {
     }
 
     try {
-      // Here you would make an API call to send reset password email
       console.log('Sending reset email to:', email);
       setIsSubmitted(true);
     } catch (error) {
@@ -50,10 +50,8 @@ const ForgotPassword = () => {
     <div className="container mx-auto">
       <div className="auth-box">
         <AuthHead
-          title="Reset Your Password"
-          paragraph="Remember your password?"
-          link="/auth/login"
-          linkText="Login"
+          title="Forgot Your Password"
+          paragraph="Enter your email to reset your password and regain access to your account easily."
         />
         
         <form onSubmit={handleSubmit} className="mt-8 space-y-6 max-w-md mx-auto">
@@ -66,8 +64,9 @@ const ForgotPassword = () => {
               name="email"
               type="email"
               autoComplete="email"
+              placeholder="Enter your email"
               required
-              className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
+              className="mt-1 block w-full px-4 py-3 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
@@ -77,10 +76,21 @@ const ForgotPassword = () => {
           <div>
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+              className="!w-full flex justify-center py-3 px-4 button"
             >
-              Send Reset Instructions
+              Continue
             </button>
+          </div>
+          <div className='text-left text-sm text-gray-500 -mt-4'>
+            By clicking Sign In or Continue with, Do you agree?
+            <br />
+            <Link to="/auth/terms-of-use" className="font-medium text-primary hover:text-primary-dark">
+              Terms of Use
+            </Link>
+            <span className='mx-1'>and</span>
+            <Link to="/auth/privacy-policy" className="font-medium text-primary hover:text-primary-dark">
+              Privacy Policy
+            </Link>
           </div>
         </form>
       </div>

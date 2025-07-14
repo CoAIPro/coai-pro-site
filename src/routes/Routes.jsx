@@ -19,7 +19,7 @@ import Signup from "../pages/signup";
 const router = createBrowserRouter([
     {
         path: "/",
-        element: <Root />,
+        element:  <Root />,
         errorElement: <Error />,
         children: [
             {

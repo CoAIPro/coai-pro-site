@@ -12,7 +12,6 @@ export const ThemeProvider = ({ children }) => {
     }, []);
 
     useEffect(() => {
-        // Apply theme to document
         if (darkMode) {
             document.documentElement.classList.add('dark');
             localStorage.setItem('home-theme', 'dark');

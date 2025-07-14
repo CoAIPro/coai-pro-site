@@ -1,9 +1,8 @@
 /* eslint-disable no-unused-vars */
+import topShadow from '@/assets/images/dashboard/top-shadow.svg';
 import CreateTemplateHeader from '@/components/reuse/template-header';
-import { categories, recommendedTemplates } from '@/data/templateCard';
+import Templates from '@/components/reuse/templates';
 import { motion } from 'framer-motion';
-import Templates from '../Templates';
-
 
 const RecommendedTemplates = () => {
   const containerVariants = {
@@ -27,7 +26,10 @@ const RecommendedTemplates = () => {
     }
   };
   return (
-    <>
+    <div className='relative'>
+      <div className='absolute -top-20 -right-10 -z-10'>
+        <img src={topShadow} alt="shadow" />
+      </div>
       <CreateTemplateHeader />
       <div className="container mx-auto mt-8">
         <motion.section
@@ -39,11 +41,11 @@ const RecommendedTemplates = () => {
           <motion.h2 variants={itemVariants} className="template-section-title">Get Started Your Way</motion.h2>
           <motion.p variants={itemVariants} className="template-section-paragraph pt-2">
             Pick a category to explore tailored options — or go bold with a blank canvas and create from scratch! Let me know if you'd like a more casual, formal, or playful tone
-            </motion.p>
+          </motion.p>
         </motion.section>
+        <Templates />
       </div>
-      <Templates templateItemsMenu={categories} cards={recommendedTemplates} />
-    </>
+    </div>
   )
 }
 

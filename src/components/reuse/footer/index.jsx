@@ -7,10 +7,10 @@ const Footer = () => {
 
 
   return (
-    <footer className="text-center py-10 bg-white dark:bg-black">
+    <footer className="text-center py-10 bg-white dark:bg-transparent">
 
       {/* Navigation Links */}
-      <div className="inline-flex items-center gap-2 lg:gap-4 border border-gray-200 rounded-full px-6 py-2 mb-6 shadow-sm text-xs lg:text-base">
+      <div className="inline-flex items-center gap-2 lg:gap-4 border border-gray-200 rounded-full px-6 py-2 mb-6 shadow-sm text-xs lg:text-base dark:bg-cardDark">
         {navLinks.map((link, index) => (
           <React.Fragment key={link.label}>
             <a href={link.href}>{link.label}</a>
@@ -24,8 +24,10 @@ const Footer = () => {
       {/* Social Icons */}
       <div className="flex justify-center items-center gap-6 pt-3 text-gray-500 text-xl">
         {socialLinks.map((social, index) => (
-          <Link key={index} to={social.href} className="hover:text-black transition">
-            <img src={social.icon} className="w-5 object-contain"  alt="icon" />
+          <Link key={index} to={social.href} className="hover:text-primary transition dark:text-white">
+            <span className="w-5 object-contain text-xl">
+              {social.icon}
+            </span>
           </Link>
         ))}
       </div>
