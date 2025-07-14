@@ -1,8 +1,6 @@
-// components/constants/footerConstants.js
-import instaIcon from "../assets/icons/insta.png";
-import linkedinIcon from "../assets/icons/linkedin.png";
-import printerestIcon from "../assets/icons/printerest.png";
-import xIcon from "../assets/icons/x.png";
+import { FaInstagram, FaLinkedin, FaPinterest } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
 
 export const navLinks = [
   { label: "About", href: "#" },
@@ -12,10 +10,10 @@ export const navLinks = [
 ];
 
 export const socialLinks = [
-  { icon: xIcon, href: "#" },
-  { icon: instaIcon, href: "#" },
-  { icon: printerestIcon, href: "#" },
-  { icon: linkedinIcon, href: "#" },
+  { icon: <FaXTwitter />, href: "#" },
+  { icon: <FaInstagram />, href: "#" },
+  { icon: <FaPinterest />, href: "#" },
+  { icon: <FaLinkedin />, href: "#" },
 ];
 
 

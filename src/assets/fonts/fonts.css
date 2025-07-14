@@ -20,7 +20,7 @@
   font-family: 'Nohemi';
   src: url('Nohemi-ExtraBold.woff2') format('woff2'),
     url('Nohemi-ExtraBold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 800;
   font-style: normal;
   font-display: swap;
 }
@@ -29,7 +29,7 @@
   font-family: 'Nohemi';
   src: url('Nohemi-Bold.woff2') format('woff2'),
     url('Nohemi-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -56,7 +56,7 @@
   font-family: 'Nohemi';
   src: url('Nohemi-Regular.woff2') format('woff2'),
     url('Nohemi-Regular.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -101,7 +101,7 @@
   font-family: 'Clash Display';
   src: url('ClashDisplay-Bold.woff2') format('woff2'),
     url('ClashDisplay-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -110,7 +110,7 @@
   font-family: 'Clash Display';
   src: url('ClashDisplay-Regular.woff2') format('woff2'),
     url('ClashDisplay-Regular.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -137,7 +137,7 @@
   font-family: 'Clash Display';
   src: url('ClashDisplayVariable-Bold.woff2') format('woff2'),
     url('ClashDisplayVariable-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -146,7 +146,7 @@
   font-family: 'Helvetica Neue LT Std';
   src: url('HelveticaNeueLTStd-Bd.woff2') format('woff2'),
     url('HelveticaNeueLTStd-Bd.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -173,7 +173,7 @@
   font-family: 'Helvetica Neue LT Std';
   src: url('HelveticaNeueLTStd-Roman.woff2') format('woff2'),
     url('HelveticaNeueLTStd-Roman.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
@@ -200,7 +200,7 @@
   font-family: 'Aeonik Pro TRIAL';
   src: url('AeonikProTRIAL-Bold.woff2') format('woff2'),
     url('AeonikProTRIAL-Bold.woff') format('woff');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
@@ -218,7 +218,7 @@
   font-family: 'Aeonik Pro TRIAL';
   src: url('AeonikProTRIAL-Regular.woff2') format('woff2'),
     url('AeonikProTRIAL-Regular.woff') format('woff');
-  font-weight: normal;
+  font-weight: 400;
   font-style: normal;
   font-display: swap;
 }

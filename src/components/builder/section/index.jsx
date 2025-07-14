@@ -6,12 +6,13 @@ import { layoutOptions } from "@/data/icons";
 import { useState } from "react";
 import { BiPaint } from "react-icons/bi";
 import { CiMobile3 } from "react-icons/ci";
+import { FaChevronDown, FaPlus } from "react-icons/fa";
 import { FiPlusCircle } from "react-icons/fi";
 import { HiOutlinePaintBrush } from "react-icons/hi2";
 import { IoInformationCircleOutline } from "react-icons/io5";
 import { MdOutlineAnimation, MdOutlineImage } from "react-icons/md";
 import { PiResizeThin } from "react-icons/pi";
-import { RiListSettingsLine } from "react-icons/ri";
+import { RiInformation2Line, RiListSettingsLine } from "react-icons/ri";
 
 const BuilderSection = () => {
   const [isOpen, setIsOpen] = useState(true);
@@ -212,7 +213,54 @@ const BuilderSection = () => {
           )}
           {activeTab === "animation" && (
             <div>
-              <h2>Animation</h2>
+              <h2 className="font-primary text-base font-medium">Animation and Effect</h2>
+              <div className="flex items-center justify-between gap-4 pt-6">
+                <span className="text-base font-normal font-primary">
+                  Add Movement in your site
+                </span>
+                <span className="cursor-pointer text-base">
+                  <RiInformation2Line />
+                </span>
+              </div>
+              <div className="border border-[#EDEDED] rounded-md mt-5">
+                <div className="flex items-center justify-between gap-4 rounded-t-md bg-primary-50 py-3 px-4 text-primary cursor-pointer">
+                  Scroll
+                  <span>
+                    <FaChevronDown />
+                  </span>
+                </div>
+                <div className="py-3 px-4">
+                  <button type="button" className="flex items-center gap-3 hover:text-primary">
+                    <FaPlus />  Add
+                  </button>
+                </div>
+              </div>
+              <div className="border border-[#EDEDED] rounded-md mt-5">
+                <div className="flex items-center justify-between gap-4 rounded-t-md bg-primary-50 py-3 px-4 text-primary cursor-pointer">
+                  Hover
+                  <span>
+                    <FaChevronDown />
+                  </span>
+                </div>
+                <div className="py-3 px-4">
+                  <button type="button" className="flex items-center gap-3 hover:text-primary">
+                    <FaPlus />  Add
+                  </button>
+                </div>
+              </div>
+              <div className="border border-[#EDEDED] rounded-md mt-5">
+                <div className="flex items-center justify-between gap-4 rounded-t-md bg-primary-50 py-3 px-4 text-primary cursor-pointer">
+                  Click
+                  <span>
+                    <FaChevronDown />
+                  </span>
+                </div>
+                <div className="py-3 px-4">
+                  <button type="button" className="flex items-center gap-3 hover:text-primary">
+                    <FaPlus />  Add
+                  </button>
+                </div>
+              </div>
             </div>
           )}
         </div>

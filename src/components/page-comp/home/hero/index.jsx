@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
 import { FaArrowRight } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 import arrow from "../../../../assets/images/hero-arrow.png";
 import line from "../../../../assets/images/lines.png";
 import waveImg from "../../../../assets/images/wave.png";
@@ -28,7 +29,11 @@ const itemVariants = {
 };
 
 const Hero = () => {
+    const navigate = useNavigate();
 
+    const handleStartBtn = () => {
+        navigate('/templates');
+      };
     return (
         <motion.section 
             className="pt-12 lg:pt-24"
@@ -64,7 +69,7 @@ const Hero = () => {
                 variants={itemVariants}
                 className="w-fit mx-auto relative pt-5 lg:pt-10"
             >
-                <button className="button flex items-center gap-2 rounded-full mx-auto !px-10 !py-4">
+                <button className="button flex items-center gap-2 rounded-full mx-auto !px-10 !py-4" onClick={handleStartBtn}>
                     Start Free
                     <FaArrowRight />
                 </button>

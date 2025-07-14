@@ -1,4 +1,6 @@
-import { useTheme } from "@/hooks/useTheme";
+
+import { ThemeContext } from "@/context/ThemeContext";
+import { useContext } from "react";
 import { FaMoon } from "react-icons/fa";
 import { FiMenu } from "react-icons/fi";
 import { MdLightMode } from "react-icons/md";
@@ -7,7 +9,7 @@ import logo from "../../../assets/images/logo.png";
 import { navItams } from "../../../data/navContent";
 
 const Navbar = () => {
-    const { toggleTheme, darkMode } = useTheme();
+    const { toggleTheme, darkMode } = useContext(ThemeContext);
     return (
         <header className="container relative">
             <div className="homeTopGradient flex items-center justify-between py-5 md:py-12">
@@ -26,7 +28,7 @@ const Navbar = () => {
                     ))}
                 </nav>
                 <div className="flex items-center gap-5">
-                    <button type="button" onClick={toggleTheme} className="flex items-center justify-center gap-2 bg-[#EEF2FF] px-4 py-3 rounded-lg text-2xl">
+                    <button type="button" onClick={toggleTheme} className="flex items-center justify-center gap-2 bg-[#EEF2FF] dark:bg-cardDark px-4 py-3 rounded-lg text-2xl">
                         {darkMode ? (
                             <div className="flex items-center gap-2">
                                 <MdLightMode className="text-primary" />
@@ -44,14 +46,14 @@ const Navbar = () => {
                             checked={darkMode}
                             readOnly
                         />
-                        <div className={`w-10 h-5 rounded-full relative transition-colors duration-300 ${
+                        <div className={`w-9 h-5 rounded-full relative transition-colors duration-300 ${
                             darkMode ? "bg-green-500" : "bg-gray-300"
                         }`}>
                             <div
-                                className={`w-4 h-4 bg-white rounded-full absolute top-1/2 transition-all duration-300 ${
+                                className={`w-[15px] h-[15px] bg-white rounded-full absolute top-1/2 transition-all duration-300 ${
                                     darkMode
-                                        ? "left-5 -translate-y-1/2"
-                                        : "left-1 -translate-y-1/2"
+                                        ? "left-[18px] -translate-y-1/2"
+                                        : "left-[4px] -translate-y-1/2"
                                 }`}
                             ></div>
                         </div>

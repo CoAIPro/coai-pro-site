@@ -5,7 +5,9 @@ const CreateTemplateHeader = () => {
   const navigate = useNavigate()
   const location = useLocation()
   const currentPath = location.pathname.split('/').pop()
-
+  const handleRouteChange = () => {
+    navigate('/dashboard/create-site');
+  }
   return (
     <header>
       <div className="container mx-auto py-8">
@@ -41,7 +43,7 @@ const CreateTemplateHeader = () => {
             </button>
           </div>
           <div className='flex items-center justify-end'>
-            <button type='button' className='btn btn-primary'>
+            <button type='button' className='btn text-xs py-4 px-5 rounded-2xl flex items-center gap-2 justify-center bg-white text-black shadow-card' onClick={handleRouteChange}>
               <FaPlus />
               Blank page
             </button>
