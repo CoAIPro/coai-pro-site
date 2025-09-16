@@ -80,7 +80,7 @@ const AuthForm = ({ type }) => {
 
   return (
     <div className="container mx-auto pt-20 pb-20">
-      <div className="auth-box">
+      <div className="auth-box border border-authBorder py-20 px-8">
         <AuthHead
           title={config.title}
           paragraph={config.paragraph}
@@ -145,24 +145,24 @@ const AuthForm = ({ type }) => {
             </div>
           )}
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between pb-5">
             <div className="flex items-center">
               <input
                 id="rememberMe"
                 name="rememberMe"
                 type="checkbox"
-                className="h-5 w-4 text-primary focus:ring-primary border-gray-300 rounded"
+                className="h-5 w-5 accent-primary rounded"
                 checked={formData.rememberMe}
                 onChange={handleChange}
               />
-              <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-900">
+              <label htmlFor="rememberMe" className="ml-2 block text-sm text-gray-900 font-medium cursor-pointer">
                 Remember me
               </label>
             </div>
 
             {type === 'login' && (
               <div className="text-sm">
-                <Link to="/auth/forgot-password" className="font-medium text-primary hover:text-primary-dark">
+                <Link to="/auth/forgot-password" className="font-medium text-primary hover:text-primary-dark hover:underline">
                   Forgot your password?
                 </Link>
               </div>
@@ -176,8 +176,7 @@ const AuthForm = ({ type }) => {
               {config.buttonText}
             </button>
           </div>
-          <div className="pt-6">
-          </div>
+          
           <div className='text-left text-sm text-gray-500 -mt-4'>
             By clicking Sign In or Continue with, Do you agree?
             <br />

@@ -37,7 +37,7 @@ const Navbar = () => {
                         ) : (
                             <div className="flex items-center gap-2">
                                 <FaMoon className="text-primary" />
-                                <span className="text-sm">Dark Mode</span>
+                                <span className="text-sm">Dark Mode Pro</span>
                             </div>
                         )}
                         <input
