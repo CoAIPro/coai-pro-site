@@ -48,7 +48,7 @@ const ForgotPassword = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="auth-box">
+      <div className="auth-box py-20 px-8 border border-authBorder">
         <AuthHead
           title="Forgot Your Password"
           paragraph="Enter your email to reset your password and regain access to your account easily."

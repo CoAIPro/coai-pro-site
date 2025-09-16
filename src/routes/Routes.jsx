@@ -1,3 +1,4 @@
+import PublishSite from "@/components/modals/PublishSite";
 import PricingPage from "@/pages/pricing-page";
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import AuthLayout from "../layout/AuthLayout";
@@ -93,6 +94,17 @@ const router = createBrowserRouter([
             {
                 index: true,
                 element: <PricingPage />,
+            }
+        ]
+    },
+    {
+        path: '/modal',
+        element: <MinimalLayout />,
+        errorElement: <Error />,
+        children: [
+            {
+                index: true,
+                element: <PublishSite />,
             }
         ]
     }

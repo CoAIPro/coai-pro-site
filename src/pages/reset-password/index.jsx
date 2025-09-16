@@ -58,7 +58,7 @@ const ResetPassword = () => {
   if (isSubmitted) {
     return (
       <div className="container mx-auto">
-        <div className="auth-box">
+        <div className="auth-box py-20 px-8 border border-authBorder">
           <div className="text-center">
             <h2 className="text-2xl font-bold pb-3">Password Reset Successfully</h2>
             <p className="text-sm text-gray-500">
@@ -73,18 +73,16 @@ const ResetPassword = () => {
 
   return (
     <div className="container mx-auto">
-      <div className="auth-box">
+      <div className="auth-box py-20 px-8 border border-authBorder">
         <AuthHead
           title="Create New Password"
-          paragraph="Remember your password?"
-          link="/auth/login"
-          linkText="Login"
+          paragraph="Set a strong new password to secure and access your account."
         />
         
         <form onSubmit={handleSubmit} className="mt-8 space-y-6 max-w-md mx-auto">
           <div>
             <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              New Password
+              Set a Password
             </label>
             <input
               id="password"
@@ -92,6 +90,7 @@ const ResetPassword = () => {
               type="password"
               autoComplete="new-password"
               required
+              placeholder='Set a Password'
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
               value={formData.password}
               onChange={handleChange}
@@ -101,12 +100,13 @@ const ResetPassword = () => {
 
           <div>
             <label htmlFor="confirmPassword" className="block text-sm font-medium text-gray-700">
-              Confirm New Password
+              Confirm Password
             </label>
             <input
               id="confirmPassword"
               name="confirmPassword"
               type="password"
+              placeholder='Confirm Password'
               autoComplete="new-password"
               required
               className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-primary focus:border-primary"
@@ -122,12 +122,12 @@ const ResetPassword = () => {
             </div>
           )}
 
-          <div>
+          <div className='w-full flex items-center justify-center pt-5'>
             <button
               type="submit"
-              className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-primary hover:bg-primary-dark focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary"
+              className="!w-full max-w-full flex justify-center py-3 px-4 button"
             >
-              Reset Password
+              Confirm
             </button>
           </div>
         </form>

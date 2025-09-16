@@ -36,6 +36,8 @@ export default {
 				'darkGradientBg': 'linear-gradient(334.82deg, rgba(42, 44, 56, 0) 1.7%, rgba(16, 112, 143, 0.2) 143.21%)'
 			},
 			colors: {
+				textCheck: '#191919',
+				textCheckGray: '#6C6C6C',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))',
@@ -57,6 +59,7 @@ export default {
 				titleColor: '#1A1A1A',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				authBorder: '#CECECE',
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'

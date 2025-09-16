@@ -71,7 +71,7 @@ const DashboardHeader = () => {
                           type="checkbox"
                           checked={previewOptions.showGrid}
                           onChange={() => handlePreviewOptionChange('showGrid')}
-                          className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+                          className="w-4 h-4 accent-primary border-gray-300 rounded focus:ring-primary"
                         />
                         <span className="text-sm text-gray-700">Show Grid</span>
                       </label>
@@ -80,7 +80,7 @@ const DashboardHeader = () => {
                           type="checkbox"
                           checked={previewOptions.showGuides}
                           onChange={() => handlePreviewOptionChange('showGuides')}
-                          className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary"
+                          className="w-4 h-4 accent-primary border-gray-300 rounded focus:ring-primary"
                         />
                         <span className="text-sm text-gray-700">Show Guides</span>
                       </label>
