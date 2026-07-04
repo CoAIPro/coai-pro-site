@@ -2,6 +2,9 @@
   "name": "nike-clone-react",
   "private": true,
   "version": "0.0.0",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -9,6 +12,7 @@
     "lint": "eslint .",
     "preview": "vite preview"
   },
+
   "dependencies": {
     "@dnd-kit/core": "^6.3.1",
     "@hookform/resolvers": "^5.1.1",
